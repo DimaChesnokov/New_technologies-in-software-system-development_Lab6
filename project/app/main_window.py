@@ -8,6 +8,8 @@ from src.splitters import split_by_year, split_by_week
 from src.source import Source
 from src.query import get_value
 from src.annotate import annotate_csv, annotate_dir
+from pathlib import Path
+from app.tab_lr6 import TabLR6
 
 
 from src.eda import *
@@ -93,6 +95,8 @@ class MainWindow(QtWidgets.QMainWindow):
 
        
         tabs.addTab(EdaTab(self), "ЛР-4: EDA")
+        # ЛР-6: новая вкладка с моделями
+        tabs.addTab(TabLR6(Path("data/dataset_KZT.csv")), "ЛР-6: Модели и прогноз")
 
     # ЛР-3
     def pick_input_dir(self):
